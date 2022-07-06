@@ -1,3 +1,4 @@
+Library\Bee\artifacts\mvdfrm\Unity.InputSystem.ref.dll_23F53B8D4D576FB0.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.PlasticSCM.Editor.ref.dll_0C0A30695FB91F25.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Rider.Editor.ref.dll_82DD26602537B210.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Services.Core.Analytics.ref.dll_3C2C679BE591812E.mvfrm
@@ -8,9 +9,18 @@ Library\Bee\artifacts\mvdfrm\Unity.TextMeshPro.ref.dll_AB6A9C4EF63D120A.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Timeline.Editor.ref.dll_8DA9371581BDD901.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Timeline.ref.dll_F8249BBF1A1F59B0.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.VSCode.Editor.ref.dll_9C78B8C6301F2728.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.Core.Editor.ref.dll_CCCBCA96875E3C2C.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.Core.ref.dll_DAADD097B5BFFFD5.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.Flow.Editor.ref.dll_49FCB345963CC76D.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.Flow.ref.dll_21BEB0EE37C97484.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.SettingsProvider.Editor.ref.dll_06F6724083C08D17.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.Shared.Editor.ref.dll_E0B850A6F8AFA9C6.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.State.Editor.ref.dll_BE7ACF94A8905AD0.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.State.ref.dll_8E00DCDB61F346F1.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.VisualStudio.Editor.ref.dll_08D7AA09E147CB5C.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEditor.UI.ref.dll_E2A091BC59174F16.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEngine.UI.ref.dll_9F0668175F397781.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.Antlr3.Runtime.dll_0249EE1C66D7AA47.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEditor.CoreModule.dll_14972328FC175B28.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEditor.DeviceSimulatorModule.dll_B771330CE7B7F319.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEditor.DiagnosticsModule.dll_66746B6B31343727.mvfrm
