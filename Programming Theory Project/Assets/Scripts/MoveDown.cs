@@ -1,31 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MoveDown : MonoBehaviour
 {
-    public float speed = 40.0f;
+    [SerializeField] private float speed = 40.0f;
 
     private float zDestroy = -60.0f;
-    private Rigidbody objectRb; 
     private GameManager gameManager;
-    private ParticleSystem thrustFlame;
+
+    protected Rigidbody objectRb; 
 
     void Start()
     {
         objectRb = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        thrustFlame = GetComponentInChildren<ParticleSystem>();
     }
 
     void Update()
     {
-        objectRb.AddForce(0, 0, -speed);
+        Move();
 
         if (transform.position.z < zDestroy)
         {
             Destroy(gameObject);
         }
+    }
+
+    protected virtual void Move()
+    {
+        objectRb.AddForce(0, 0, -speed);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -35,4 +37,5 @@ public class MoveDown : MonoBehaviour
             gameManager.GameOver();
         } 
     }
+
 }
