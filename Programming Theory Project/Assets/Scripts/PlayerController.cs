@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private GameObject playerBullet;
+
     private Rigidbody playerRb;
     private GameManager gameManager;
 
@@ -12,6 +14,10 @@ public class PlayerController : MonoBehaviour
     private float time;
     private float soarTime;
     private float upTime;
+
+    [SerializeField] private bool fireReady = true;
+    private float fireCooldown = 10.0f;
+    private float fireTime;
 
     private Vector3 defaultPos;
     private Vector3 jumpHeight = Vector3.up;
@@ -30,7 +36,7 @@ public class PlayerController : MonoBehaviour
         time = Time.time;
         Update_MousePosition();
         MovePlayer();
-        StartCoroutine(PlayerJump());
+        PlayerAct();
     }
 
     void Update_MousePosition()
@@ -51,6 +57,12 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    void PlayerAct()
+    {
+        StartCoroutine(PlayerJump());
+        StartCoroutine(PlayerFire());
+    }
+
     //현재는 position만 변경
     IEnumerator PlayerJump()
     {
@@ -59,7 +71,7 @@ public class PlayerController : MonoBehaviour
             if (!jumpState)
             {
                 soarTime = time;
-                upTime = 0.6f;
+                upTime = 0.4f;
                 jumpState = !jumpState;
                 while (upTime > 0)
                 {
@@ -70,9 +82,9 @@ public class PlayerController : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, defaultPos.y, transform.position.z) + jumpHeight;
             }
         }
-        if (time - soarTime >= 2 && jumpState)
+        if (time - soarTime >= 1.2 && jumpState)
         {
-            upTime = 0.4f;
+            upTime = 0.6f;
             while (upTime < 1) 
             {
                 transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, defaultPos.y, transform.position.z), upTime);
@@ -83,6 +95,25 @@ public class PlayerController : MonoBehaviour
             jumpState = !jumpState;
         }
 
+    }
+
+    IEnumerator PlayerFire()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            if (fireReady)
+            {
+                fireTime = time;
+                fireReady = !fireReady;
+                Instantiate(playerBullet, transform.position + new Vector3(-1, 0, 1), playerBullet.transform.rotation);
+                Instantiate(playerBullet, transform.position + new Vector3(1, 0, 1), playerBullet.transform.rotation);
+            }
+        }
+        if (time - fireTime > fireCooldown && !fireReady)
+        {
+            fireReady = !fireReady;
+        }
+        yield return null;
     }
 
 }

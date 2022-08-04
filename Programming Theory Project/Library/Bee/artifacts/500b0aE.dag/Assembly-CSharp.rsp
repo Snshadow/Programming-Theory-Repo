@@ -350,6 +350,7 @@
 -r:"Library/Bee/artifacts/500b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/500b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/EffectExamples/Misc Effects/Scripts/SpawnEffect.cs"
+"Assets/Scripts/BulletMovement.cs"
 "Assets/Scripts/CameraController.cs"
 "Assets/Scripts/FollowObject.cs"
 "Assets/Scripts/GameManager.cs"

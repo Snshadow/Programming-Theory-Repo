@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject player; 
+    public GameObject player;
+    public GameObject moveRandomizer;
     public Button startButton; 
     public Button restartButton;
     public TextMeshProUGUI titleText; 

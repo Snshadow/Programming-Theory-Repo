@@ -1072,6 +1072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1029905780}
+  moveRandomizer: {fileID: 0}
   startButton: {fileID: 2042884101}
   restartButton: {fileID: 1506506628}
   titleText: {fileID: 420974504}
@@ -1093,7 +1094,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -1224,6 +1225,8 @@ MonoBehaviour:
   - {fileID: 821335461454053329, guid: caf824a8514c672438d3d495784aeba9, type: 3}
   - {fileID: 8151930590694903681, guid: b2a4f3d29ca58b04c9cdf1cf7d004ab1, type: 3}
   thrustFlame: {fileID: 139159971213429648, guid: d9b22949a7d82824487f3bea8b48459e,
+    type: 3}
+  explodeEffect: {fileID: 7694704508483616469, guid: a2767d2c27d26374f9011ee9c6ff029b,
     type: 3}
 --- !u!4 &782542861
 Transform:
@@ -1680,52 +1683,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1343683552
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1343683554}
-  - component: {fileID: 1343683553}
-  m_Layer: 0
-  m_Name: MoveRandomizer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1343683553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1343683552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53c5f35743fd9fe4fba094b64794f40d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 40
---- !u!4 &1343683554
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1343683552}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0756946, y: 8.020356, z: -13.757482}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1399770860
 GameObject:
@@ -2091,7 +2049,7 @@ RectTransform:
   - {fileID: 934840038}
   - {fileID: 824439041}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2307,7 +2265,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2042884099
 GameObject:
@@ -2456,7 +2414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 402300, guid: 079954accd64b32419ec069129c81273, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 402300, guid: 079954accd64b32419ec069129c81273, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2704,11 +2662,6 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 7996690576464196169, guid: a6b18f047e13df74d9feff20c9ed321a,
-        type: 3}
-      propertyPath: transform_cursor
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7996690576464196170, guid: a6b18f047e13df74d9feff20c9ed321a,
         type: 3}
       propertyPath: m_UseGravity
@@ -2725,6 +2678,11 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7996690576466487844, guid: a6b18f047e13df74d9feff20c9ed321a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996690576466487846, guid: a6b18f047e13df74d9feff20c9ed321a,
         type: 3}
       propertyPath: m_Enabled
       value: 1

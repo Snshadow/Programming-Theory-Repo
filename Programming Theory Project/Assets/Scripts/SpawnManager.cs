@@ -5,10 +5,13 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] enemies;
     public ParticleSystem thrustFlame;
+    public ParticleSystem explodeEffect;
+
+    public ParticleSystem carriedEffect;
 
     private GameManager gameManager;
 
-    private float zEnemySpawn = 40.0f;
+    private float zEnemySpawn = 60.0f;
     private float xSpawnRange = 40.0f;
     private float ySpawn = 0.75f;
 
@@ -45,6 +48,8 @@ public class SpawnManager : MonoBehaviour
 
             spawned = Instantiate(enemies[randomIndex], spawnPos, enemies[randomIndex].transform.rotation);
             Instantiate(thrustFlame, spawned.transform.position, thrustFlame.transform.rotation, spawned.transform);
+            carriedEffect = Instantiate(explodeEffect, spawned.transform.position + Vector3.forward * -2, explodeEffect.transform.rotation, spawned.transform);
+
         }
         StartCoroutine(SpawnEnemy());
     }
