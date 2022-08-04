@@ -1,15 +1,15 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FollowObject : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject target;
     [SerializeField] private Vector3 offset = new Vector3(0, 6.0f, -4.0f);
 
     void LateUpdate()
     {
-        if (player.activeInHierarchy)
+        if (target.activeInHierarchy)
         {
-            transform.position = player.transform.position + offset;
+            transform.position = target.transform.position + offset;
         } 
     }
 }

@@ -1,26 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MoveDown : MonoBehaviour
 {
-    public float speed = 40.0f;
+    [SerializeField] protected float speed = 40.0f;
 
     private float zDestroy = -60.0f;
-    private Rigidbody objectRb; 
-    private GameManager gameManager;
-    private ParticleSystem thrustFlame;
+    
+    protected GameManager gameManager;
+    protected SpawnManager spawnManager;
+
+    protected Rigidbody objectRb;
 
     void Start()
     {
         objectRb = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        thrustFlame = GetComponentInChildren<ParticleSystem>();
+        spawnManager = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
     }
 
     void Update()
     {
-        objectRb.AddForce(0, 0, -speed);
+        Move();
 
         if (transform.position.z < zDestroy)
         {
@@ -28,11 +28,22 @@ public class MoveDown : MonoBehaviour
         }
     }
 
+    private void Move()
+    {
+        objectRb.AddForce(0, 0, -speed);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player") && gameManager.isGameActive)
         {
             gameManager.GameOver();
-        } 
+        }
+        else if (collision.gameObject.CompareTag("Shootable"))
+        {
+            spawnManager.carriedEffect.Play();
+            Destroy(gameObject);
+        }
     }
+
 }
