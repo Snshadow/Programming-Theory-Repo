@@ -34,9 +34,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         time = Time.time;
-        Update_MousePosition();
-        MovePlayer();
-        PlayerAct();
+        Update_MousePosition(); // ABSTRACTION
+        MovePlayer(); // ABSTRACTION
+        PlayerAct(); // ABSTRACTION
         if (Input.GetKey(KeyCode.LeftControl))
         {
             Time.timeScale = 0.2f;
