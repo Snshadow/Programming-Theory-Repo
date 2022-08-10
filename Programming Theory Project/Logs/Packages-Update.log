@@ -77,3 +77,11 @@ Update Mode: updateDependencies
 
 The following packages were updated:
   com.unity.postprocessing from version 2.3.0 to 3.2.2
+
+=== Wed Aug 10 15:47:43 2022
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.collab-proxy from version 1.15.18 to 1.17.1

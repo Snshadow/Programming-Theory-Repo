@@ -5,9 +5,8 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] enemies;
     public ParticleSystem thrustFlame;
-    public ParticleSystem explodeEffect;
 
-    public ParticleSystem carriedEffect;
+    public bool counted = false;
 
     private GameManager gameManager;
 
@@ -48,8 +47,6 @@ public class SpawnManager : MonoBehaviour
 
             spawned = Instantiate(enemies[randomIndex], spawnPos, enemies[randomIndex].transform.rotation);
             Instantiate(thrustFlame, spawned.transform.position, thrustFlame.transform.rotation, spawned.transform);
-            carriedEffect = Instantiate(explodeEffect, spawned.transform.position + Vector3.forward * -2, explodeEffect.transform.rotation, spawned.transform);
-
         }
         StartCoroutine(SpawnEnemy());
     }

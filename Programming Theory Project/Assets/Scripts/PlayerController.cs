@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private float upTime;
 
     [SerializeField] private bool fireReady = true;
-    private float fireCooldown = 10.0f;
+    private float fireCooldown = 0.1f;
     private float fireTime;
 
     private Vector3 defaultPos;
@@ -37,6 +37,14 @@ public class PlayerController : MonoBehaviour
         Update_MousePosition();
         MovePlayer();
         PlayerAct();
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            Time.timeScale = 0.2f;
+        }
+        else if(Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            Time.timeScale = 1;
+        }
     }
 
     void Update_MousePosition()
@@ -105,8 +113,8 @@ public class PlayerController : MonoBehaviour
             {
                 fireTime = time;
                 fireReady = !fireReady;
-                Instantiate(playerBullet, transform.position + new Vector3(-1, 0, 1), playerBullet.transform.rotation);
-                Instantiate(playerBullet, transform.position + new Vector3(1, 0, 1), playerBullet.transform.rotation);
+                Instantiate(playerBullet, transform.position + new Vector3(-1, 0.25f, 1), playerBullet.transform.rotation);
+                Instantiate(playerBullet, transform.position + new Vector3(1, 0.25f, 1), playerBullet.transform.rotation);
             }
         }
         if (time - fireTime > fireCooldown && !fireReady)
