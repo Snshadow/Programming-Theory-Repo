@@ -6,23 +6,20 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject player;
-    public GameObject moveRandomizer;
     public Button startButton; 
     public Button restartButton;
     public TextMeshProUGUI titleText; 
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI timeText;
+    public TextMeshProUGUI instruction;
     public AudioSource explodeSound;
     public ParticleSystem explodeParticle;
+
     public bool isGameActive;
-    private float time;
+    public float time;
+
     private int seconds;
     private int minutes;
-
-    void Start() 
-    {
-       
-    }
 
     void Update()
     {
@@ -33,6 +30,10 @@ public class GameManager : MonoBehaviour
             minutes = (int)time / 60;
             timeText.text = "Time: " + minutes + "min " + seconds + "sec";
         }
+        else
+        {
+            Time.timeScale = 1;
+        }
     }
 
     public void StartGame()
@@ -40,6 +41,8 @@ public class GameManager : MonoBehaviour
         isGameActive = true;
         titleText.gameObject.SetActive(false);
         startButton.gameObject.SetActive(false);
+        instruction.gameObject.SetActive(false);
+        Cursor.visible = false;
     }
 
     public void GameOver()
@@ -50,6 +53,7 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         gameOverText.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
+        Cursor.visible = true;
     }
 
     public void RestartGame()
