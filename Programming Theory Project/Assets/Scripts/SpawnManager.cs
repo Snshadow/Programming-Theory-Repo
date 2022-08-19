@@ -6,8 +6,6 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] enemies;
     public ParticleSystem thrustFlame;
 
-    public bool counted = false;
-
     private GameManager gameManager;
 
     private float zEnemySpawn = 60.0f;
